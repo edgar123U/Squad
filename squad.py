@@ -3,9 +3,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from mplsoccer import VerticalPitch
 
-# Load data from GitHub
-url = "https://raw.githubusercontent.com/edgar123U/Squad/main/Positionid_1%20-%20Folha1.csv"
-df = pd.read_csv(url)
+# Load data from a local CSV file
+csv_file_path = "Positionid_1 - Folha1.csv"
+
+try:
+    df = pd.read_csv(csv_file_path)
+except Exception as e:
+    st.error(f"Error loading CSV file: {e}")
+    st.stop()
 
 # Streamlit app
 st.title("Football Pitch Player Position")
@@ -29,10 +34,4 @@ x2, y2 = player_to_plot['position_x2'].values[0], player_to_plot['position_y2'].
 
 # Plotting the positions
 pitch.scatter([x1], [y1], ax=ax, s=500, c="red", hatch="||", linewidth=3)
-pitch.annotate(player_to_plot['player_name'].values[0], (x1, y1), va="center", ha="center", ax=ax, color="white")
-
-pitch.scatter([x2], [y2], ax=ax, s=300, c="red", hatch="||", linewidth=3)
-pitch.annotate(player_to_plot['player_name'].values[0], (x2, y2), va="center", ha="center", ax=ax, color="white")
-
-# Display the plot in Streamlit
-st.pyplot(fig)
+pitch.annot
