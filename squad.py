@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from mplsoccer import VerticalPitch
 
 # Load data from a local CSV file
-csv_file_path = "Position id_1 - Folha1.csv"
+csv_file_path = "Positionid_1 - Folha1.csv"
 
 try:
     df = pd.read_csv(csv_file_path)
@@ -33,5 +33,12 @@ x1, y1 = player_to_plot['position_x'].values[0], player_to_plot['position_y'].va
 x2, y2 = player_to_plot['position_x2'].values[0], player_to_plot['position_y2'].values[0]
 
 # Plotting the positions
-pitch.scatter([x1], [y1], ax=ax, s=500, c="red", hatch="||", linewidth=3)
-pitch.annot
+sc1 = pitch.scatter([x1], [y1], ax=ax, s=500, c="red", edgecolors='black', linewidth=3)
+pitch.annotate(player_to_plot['player_name'].values[0], (x1, y1), va="center", ha="center", ax=ax, color="white")
+
+sc2 = pitch.scatter([x2], [y2], ax=ax, s=300, c="red", edgecolors='black', linewidth=3)
+pitch.annotate(player_to_plot['player_name'].values[0], (x2, y2), va="center", ha="center", ax=ax, color="white")
+
+# Display the plot in Streamlit
+st.pyplot(fig)
+
