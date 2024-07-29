@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from mplsoccer import VerticalPitch
 
 # Load data from GitHub
-url = "https://raw.githubusercontent.com/edgar123U/Squad/main/Positionid_1%20-%20Folha1.csv"
+url = "https://raw.githubusercontent.com/edgar123U/Squad/main/Positionid_1%20-%20Folha1.csv
+"
 df = pd.read_csv(url)
 
 # Streamlit app
