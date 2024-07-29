@@ -34,10 +34,9 @@ x2, y2 = player_to_plot['position_x2'].values[0], player_to_plot['position_y2'].
 
 # Plotting the positions
 sc1 = pitch.scatter([x1], [y1], ax=ax, s=500, c="red",  linewidth=3)
-pitch.annotate(player_to_plot['player_name'].values[0], (x1, y1), va="center", ha="center", ax=ax, color="white")
+
 
 sc2 = pitch.scatter([x2], [y2], ax=ax, s=300, c="red",  linewidth=3)
-pitch.annotate(player_to_plot['player_name'].values[0], (x2, y2), va="center", ha="center", ax=ax, color="white")
 
 # Display the plot in Streamlit
 st.pyplot(fig)
