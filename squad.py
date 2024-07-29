@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from mplsoccer import VerticalPitch
 
 # Load data from a local CSV file
-csv_file_path = "Positionid_1 - Folha1.csv"
+csv_file_path = "Position id_1 - Folha1.csv"
 
 try:
     df = pd.read_csv(csv_file_path)
