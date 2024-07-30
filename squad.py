@@ -4,13 +4,9 @@ import matplotlib.pyplot as plt
 from mplsoccer import VerticalPitch
 
 # Load data from a local CSV file
-csv_file_path = "Position id_1 - Folha1.csv"
 
-try:
-    df = pd.read_csv(csv_file_path)
-except Exception as e:
-    st.error(f"Error loading CSV file: {e}")
-    st.stop()
+
+df=pd.read_csv("Position id_1 - Folha1.csv")
 
 # Streamlit app
 st.title("Football Pitch Player Position")
